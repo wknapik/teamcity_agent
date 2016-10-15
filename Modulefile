@@ -1,0 +1,8 @@
+name    'wknapik-teamcity_agent'
+version '0.0.4'
+source 'https://github.com/wknapik/teamcity_agent.git'
+author 'wknapik'
+license 'MIT'
+summary 'Installs TeamCity agents'
+description 'Installs TeamCity agents with reasonable defaults and adds a cron entry to keep them alive. All defaults can be overridden.'
+project_page 'https://github.com/wknapik/teamcity_agent'

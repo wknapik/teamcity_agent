@@ -1,0 +1,1 @@
+class teamcity_agent { }

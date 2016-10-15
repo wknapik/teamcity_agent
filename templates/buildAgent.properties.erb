@@ -1,0 +1,11 @@
+serverUrl=<%= @server_url %>
+name=<%= @agent_name or @agent_name_auto %>
+workDir=../work
+tempDir=../temp
+systemDir=../system
+<%- if @own_address -%>
+ownAddress=<%= @own_address %>
+<%- end -%>
+ownPort=<%= @own_port or @port_base.to_i + @name.to_i - 1 %>
+authorizationToken=
+<%= @properties %>

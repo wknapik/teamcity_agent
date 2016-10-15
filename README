@@ -1,0 +1,34 @@
+Usage
+=====
+
+# Scenario 1: set up 8 agents, with default settings (recommended).
+# Agent names will be $fqdn-01 .. $fqdn-08, they will listen on ports 9090 ..
+# 9097, will be installed in /home/teamcity/agent/ and a cron entry will be
+# added for each to run every 5min and call agent.sh start.
+$range = range(1, 8)
+teamcity_agent::agent { $range :
+    server_url => 'http://example.com/'
+}
+
+# Scenario 2: set the agent name and port explicitly.
+teamcity_agent::agent { 'foo':
+    server_url => 'http://example.com/'
+    own_port => 6666,
+}
+
+# Scenario 3: set all options explicitly.
+teamcity_agent::agent { 'my bar':
+    user => 'ci',
+    server_url => 'http://example.com/',
+    # If you want $name != $agent_name.
+    agent_name => 'bar', 
+    own_address => '172.16.1.10',
+    own_port => 9999,
+    properties => 'some.prop = qux',
+    with_cron => false
+}
+
+Credits
+=======
+
+Based on https://github.com/eirc/puppet-teamcity_agent
